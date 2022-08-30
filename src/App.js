@@ -545,12 +545,10 @@ function App() {
         <div className='tableContainer'>{table.map((field, i) => <div 
           key={field.id} 
           className={`${field.className} ${getStylesForFieldsWhenNotSelected(selectedFigure, turn, field)}`} 
-          onClick={() => selectFigure(field)}
           style={tableColor && {backgroundColor: `${field.className === 'white' ? tableColor.white : tableColor.black}`}}
         >
           <div className='tableFieldIdentifier'>{field.id}</div>
           <div className='tableIconContainer'>{field.figure && <Figure figure={field.figure.figure} player={field.figure.player} check={check && check === field.figure.player && field.figure.figure === 'king' ? true : false} />}</div>
-          <div className={`${getStylesForFieldsWhenSelected(selectedFigure, field, availableMoves)}`}></div>
         </div>)}</div>
         </Modal>}
         <div className='tableContainer'>{table.map((field, i) => <div 
